@@ -107,7 +107,7 @@ open class SwiftSignatureView: UIView {
         self.addGestureRecognizer(pan)
     }
     
-    func tap(_ tap:UITapGestureRecognizer) {
+    @objc func tap(_ tap:UITapGestureRecognizer) {
         let rect = self.bounds
         
         UIGraphicsBeginImageContextWithOptions(rect.size, false, UIScreen.main.scale)
@@ -124,7 +124,7 @@ open class SwiftSignatureView: UIView {
         self.delegate?.swiftSignatureViewDidTapInside(self)
     }
     
-    func pan(_ pan:UIPanGestureRecognizer) {
+    @objc func pan(_ pan:UIPanGestureRecognizer) {
         switch(pan.state) {
         case .began:
             previousPoint = pan.location(in: self)
